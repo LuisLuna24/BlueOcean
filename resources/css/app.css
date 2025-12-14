@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] {
+    display: none;
+}
+
+@theme {
+  /* Definiendo colores personalizados */
+  --color-primary: #f08121;
+  --color-secondary: #294999;
+}
