@@ -580,5 +580,14 @@
     "lbl_readonly": "Read only",
     "btn_cancel": "Cancel",
     "btn_reject": "Reject",
-    "btn_approve": "Approve"
+    "btn_approve": "Approve",
+    "official_links_title": "Official Links",
+    "official_links_desc": "Direct and secure links to manage your procedures with IRS and GTC.",
+    "link_irs_refund": "IRS Refund",
+    "link_irs_account": "IRS Account",
+    "link_gtc_pay": "GTC Quick Pay",
+    "link_gtc_refund": "GTC Refund",
+    "tag_federal": "Federal",
+    "tag_personal_mgmt": "Personal Management",
+    "tag_ga_state": "Georgia State"
 }

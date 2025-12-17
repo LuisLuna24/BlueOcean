@@ -116,9 +116,9 @@
                         <div>
                             <span
                                 class="block text-xs text-gray-400 uppercase font-bold mb-0.5">{{ $text['phone_label'] }}</span>
-                            <a href="tel:+15551234567"
+                            <a href="https://wa.me/7863253125" target="_blank" rel="noopener noreferrer"
                                 class="text-gray-700 hover:text-secondary transition-colors font-bold">
-                                +1 (555) 123-4567
+                                +1 (786) 325-3125
                             </a>
                         </div>
                     </li>
@@ -136,9 +136,9 @@
                         <div>
                             <span
                                 class="block text-xs text-gray-400 uppercase font-bold mb-0.5">{{ $text['email_label'] }}</span>
-                            <a href="mailto:info@tuempresa.com"
+                            <a href="mailto:info@blueoceanaccountax.com"
                                 class="text-gray-700 hover:text-secondary transition-colors font-bold break-all">
-                                info@tuempresa.com
+                                info@blueoceanaccountax.com
                             </a>
                         </div>
                     </li>

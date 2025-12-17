@@ -580,5 +580,14 @@
     "lbl_readonly": "Sólo lectura",
     "btn_cancel": "Cancelar",
     "btn_reject": "Rechazar",
-    "btn_approve": "Aprobar"
+    "btn_approve": "Aprobar",
+    "official_links_title": "Accesos Oficiales",
+    "official_links_desc": "Enlaces directos y seguros para gestionar tus trámites en IRS y GTC.",
+    "link_irs_refund": "IRS Reembolso",
+    "link_irs_account": "IRS Cuenta",
+    "link_gtc_pay": "GTC Pago Rápido",
+    "link_gtc_refund": "GTC Reembolso",
+    "tag_federal": "Federal",
+    "tag_personal_mgmt": "Gestión Personal",
+    "tag_ga_state": "Estado de Georgia"
 }
