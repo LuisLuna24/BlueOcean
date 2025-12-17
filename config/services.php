@@ -34,5 +34,10 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
+    'recaptcha' => [
+        // Aquí le decimos a Laravel: "Busca la variable que se llama NOCAPTCHA_SITEKEY en el archivo .env"
+        'site_key' => env('NOCAPTCHA_SITEKEY'),
+        'secret_key' => env('NOCAPTCHA_SECRET'),
+    ],
 
 ];

@@ -38,6 +38,7 @@
     <x-footer />
 
     @livewireScripts
+    @stack('scripts')
     <script>
 
         function onSubmit(token) {

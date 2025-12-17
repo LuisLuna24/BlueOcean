@@ -41,7 +41,7 @@
                 </button>
             </div>
         @else
-            <form wire:submit.prevent="save" class="space-y-6">
+            <form class="space-y-6" id="reviewForm">
 
                 <div>
                     <label class="block text-sm font-semibold text-gray-700 mb-1.5">{{ __('lbl_name') }}</label>
@@ -70,20 +70,13 @@
                     @enderror
                 </div>
 
-                <div class="form-group">
-                    <div wire:ignore>
-                        {!! NoCaptcha::display(['data-callback' => 'onCaptchaVerified']) !!}
+                @error('captchaToken')
+                    <div class="p-3 bg-red-100 text-red-700 rounded-lg text-sm">
+                        {{ $message }}
                     </div>
-                    @error('captchaToken')
-                        <p class="mt-1 text-sm text-red-500 font-bold">{{ $message }}</p>
-                    @enderror
-                </div>
+                @enderror
 
-                <button type="submit" wire:loading.attr="disabled" x-data
-                    @mouseenter="gsap.to($el, { scale: 1.02, duration: 0.2 })"
-                    @mouseleave="gsap.to($el, { scale: 1, duration: 0.2 })"
-                    @mousedown="gsap.to($el, { scale: 0.95, duration: 0.1 })"
-                    @mouseup="gsap.to($el, { scale: 1.02, duration: 0.1 })"
+                <button type="button" onclick="iniciarEnvio()" wire:loading.attr="disabled"
                     class="w-full flex justify-center items-center px-6 py-3.5 border border-transparent text-sm font-bold rounded-xl text-white bg-primary hover:bg-primary/90 shadow-lg transition-all disabled:opacity-70">
 
                     <span wire:loading.remove>{{ __('btn_submit') }}</span>
@@ -102,20 +95,28 @@
                 </button>
 
                 @push('scripts')
-                    {!! NoCaptcha::renderJs() !!}
+                    <script src="https://www.google.com/recaptcha/api.js?render={{ config('services.recaptcha.site_key') }}"></script>
 
                     <script>
-                        // 1. Cuando Google confirma que no es robot, avisa a Livewire
-                        function onCaptchaVerified(token) {
-                            @this.set('captchaToken', token);
-                        }
+                        function iniciarEnvio() {
 
-                        // 2. Escucha el evento de PHP para limpiar el captcha después de enviar
-                        document.addEventListener('livewire:initialized', () => {
-                            @this.on('reset-captcha', (event) => {
-                                grecaptcha.reset();
+                            grecaptcha.ready(function() {
+                                grecaptcha.execute('{{ config('services.recaptcha.site_key') }}', {
+                                        action: 'submit'
+                                    })
+                                    .then(function(token) {
+
+                                        // 1. Asignamos el token a Livewire
+                                        @this.set('captchaToken', token);
+
+                                        // 2. Ejecutamos el guardado
+                                        @this.call('save');
+                                    })
+                                    .catch(function(error) {
+                                        alert('Error al conectar con Google. Por favor revisa tu conexión.');
+                                    });
                             });
-                        });
+                        }
                     </script>
                 @endpush
             </form>
