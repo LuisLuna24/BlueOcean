@@ -50,10 +50,10 @@
                         <div
                             class="absolute bottom-6 left-6 bg-white/90 backdrop-blur-xs px-6 py-3 rounded-lg shadow-lg border-l-4 border-primary">
                             <p class="text-xs font-bold text-gray-500 uppercase tracking-wider">
-                                Experiencia
+                                {{ __('Experience') }}
                             </p>
                             <p class="text-xl font-bold text-secondary">
-                                20+ Años
+                                {{ __('20_years_plus') }}
                             </p>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
 
                     <div
                         class="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-6 about-stagger opacity-0 translate-y-4">
-                        Sobre Mí
+                        {{ __('About Me') }}
                     </div>
 
                     <h1
@@ -71,27 +71,25 @@
                         Yamily Zambrano
                     </h1>
                     <h2 class="text-xl text-gray-500 font-medium mb-8 about-stagger opacity-0 translate-y-4">
-                        Senior Tax Advisor & Líder de Estrategia Virtual
+                        {{ __('yamily_role') }}
                     </h2>
 
                     <div
                         class="space-y-6 text-lg text-gray-600 leading-relaxed text-justify md:text-left about-stagger opacity-0 translate-y-4">
                         <p>
-                            Con más de <span class="font-bold text-gray-900">20 años de experiencia</span> en
-                            contabilidad, auditoría e impuestos, he trabajado en firmas reconocidas de Georgia brindando
-                            soluciones a personas y pequeños negocios.
+                            {{ __('bio_p1_start') }}
+                            <span class="font-bold text-gray-900">{{ __('bio_p1_bold') }}</span>
+                            {{ __('bio_p1_end') }}
                         </p>
                         <p>
-                            Soy Licenciada en Contaduría Pública, con <span class="font-bold text-gray-900">Maestría en
-                                Administración (MBA)</span>, y miembro de institutos acreditados por el IRS, lo que me
-                            permite mantenerme siempre actualizada en leyes y regulaciones tributarias.
+                            {{ __('bio_p2_start') }}
+                            <span class="font-bold text-gray-900">{{ __('bio_p2_bold') }}</span>
+                            {{ __('bio_p2_end') }}
                         </p>
                         <p>
-                            Hoy lidero la estrategia virtual de la empresa a nivel nacional, garantizando un servicio de
-                            calidad respaldado por innovación y tecnología. Además, combino mi pasión por la enseñanza
-                            con mi compromiso social, impartiendo cursos de impuestos y <span
-                                class="font-bold text-primary">apoyando a la comunidad hispana</span> en
-                            su crecimiento financiero y empresarial.
+                            {{ __('bio_p3_start') }}
+                            <span class="font-bold text-primary">{{ __('bio_p3_bold') }}</span>
+                            {{ __('bio_p3_end') }}
                         </p>
                     </div>
 
@@ -107,7 +105,7 @@
                                 </svg>
                             </div>
                             <h4 class="font-bold text-gray-900">MBA & CPA</h4>
-                            <p class="text-sm text-gray-500">Alta Formación</p>
+                            <p class="text-sm text-gray-500">{{ __('advanced_education') }}</p>
                         </div>
 
                         <div class="stat-item opacity-0 translate-y-4">
@@ -131,8 +129,8 @@
                                     </path>
                                 </svg>
                             </div>
-                            <h4 class="font-bold text-gray-900">Servicio Nacional</h4>
-                            <p class="text-sm text-gray-500">Estrategia Virtual</p>
+                            <h4 class="font-bold text-gray-900">{{ __('national_service') }}</h4>
+                            <p class="text-sm text-gray-500">{{ __('virtual_strategy') }}</p>
                         </div>
 
                     </div>

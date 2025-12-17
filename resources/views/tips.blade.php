@@ -2,25 +2,22 @@
     @php
         $tipsData = [
             [
-                'title' => 'Tomar decisiones informadas',
-                'desc' =>
-                    'La contabilidad permite conocer la situación económica real de un negocio, facilitando la toma de decisiones estratégicas oportunas y basadas en datos concretos, no en suposiciones.',
+                'title' => __('tip_1_title'),
+                'desc' => __('tip_1_desc'),
                 'icon' =>
                     '<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>',
                 'color' => 'bg-blue-50 text-blue-600',
             ],
             [
-                'title' => 'Cumplir obligaciones legales',
-                'desc' =>
-                    'Ayuda a cumplir con los requerimientos de organismos públicos como la Secretaría de Estado, condado, ciudad e IRS, evitando sanciones, multas y problemas legales que pongan en riesgo tu patrimonio.',
+                'title' => __('tip_2_title'),
+                'desc' => __('tip_2_desc'),
                 'icon' =>
                     '<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>',
                 'color' => 'bg-orange-50 text-orange-600',
             ],
             [
-                'title' => 'Proveer información a terceros',
-                'desc' =>
-                    'La contabilidad genera información confiable y estandarizada, indispensable para que los bancos aprueben créditos y para que los accionistas puedan evaluar objetivamente la evolución de su inversión.',
+                'title' => __('tip_3_title'),
+                'desc' => __('tip_3_desc'),
                 'icon' =>
                     '<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21v-7"/><path d="M19 21v-7"/><path d="M9 9a3 3 0 0 0 0 6h3m-3-3h3"/><path d="M12 17v1m0-10V7"/></svg>',
                 'color' => 'bg-green-50 text-green-600',
@@ -55,14 +52,13 @@
 
             <div class="tips-header text-center max-w-3xl mx-auto mb-16 opacity-0 translate-y-8">
                 <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">
-                    ¿Por qué es vital?
+                    {{ __('why_vital') }}
                 </span>
                 <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6">
-                    El valor de una buena contabilidad
+                    {{ __('value_accounting') }}
                 </h2>
                 <p class="text-lg text-gray-600 leading-relaxed">
-                    Más allá de los números, una contabilidad ordenada es la columna vertebral de un negocio exitoso y
-                    seguro.
+                    {{ __('accounting_desc') }}
                 </p>
             </div>
 

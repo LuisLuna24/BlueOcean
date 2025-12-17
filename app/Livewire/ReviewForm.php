@@ -15,12 +15,19 @@ class ReviewForm extends Component
 
     public $successMessage = false;
 
+    public $captchaToken;
+
     public function save()
     {
         $this->validate([
             'name' => 'required|min:3|max:50',
-            'email' => 'required|email', // Pedimos email para evitar spam simple
+            'email' => 'required|email',
             'comment' => 'required|min:10',
+            // 2. Validamos el captcha (usando el paquete anhskohbo/no-captcha)
+            'captchaToken' => 'required|captcha',
+        ], [
+            'captchaToken.required' => 'Por favor confirma que no eres un robot.',
+            'captchaToken.captcha' => 'Error de validación del captcha.'
         ]);
 
         DB::beginTransaction();
@@ -32,14 +39,17 @@ class ReviewForm extends Component
             ]);
 
             DB::commit();
-            // Reseteamos el formulario
-            $this->reset(['name', 'email', 'comment', 'rating']);
 
-            // Mostramos mensaje de éxito
-            $this->successMessage = true;
+            // 3. Reseteamos variables
+            $this->reset(['name', 'email', 'comment', 'captchaToken']);
+
+            // 4. Emitimos evento para limpiar el captcha visualmente en el frontend
+            $this->dispatch('reset-captcha');
+
+            session()->flash('success', '¡Gracias por tu reseña!');
         } catch (\Exception $e) {
-            // Aquí podríamos manejar errores, loguearlos, etc.
-            $this->addError('general', 'Ocurrió un error al enviar la reseña. Por favor, inténtalo de nuevo más tarde.');
+            DB::rollBack();
+            $this->addError('general', 'Ocurrió un error. Inténtalo más tarde.');
         }
     }
 

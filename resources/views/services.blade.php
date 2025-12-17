@@ -1,83 +1,84 @@
 <x-guest-layout>
 
     @php
-        // Datos del Backend
+        // Datos del Backend TRADUCIDOS
+        // Al usar __() aquí, el array que se pasa a Javascript ya irá en el idioma correcto.
         $servicesData = [
             [
-                'title' => 'Impuestos Personales (1040)',
+                'title' => __('s_personal_title'),
                 'image' => asset('img/tax-personal.webp'),
-                'desc' => 'Preparación y presentación profesional de tus impuestos personales.',
-                'tags' => 'taxes personal 1040 reembolso',
+                'desc' => __('s_personal_desc'),
+                'tags' => __('s_personal_tags'), // Tags traducidos para que la búsqueda funcione en el idioma actual
                 'url' => '/services/personal-tax',
             ],
             [
-                'title' => 'Impuestos Corporativos',
+                'title' => __('s_corporate_title'),
                 'image' => asset('img/tax-corporate.webp'),
-                'desc' => 'Soluciones fiscales para corporaciones (1120/1120-S) y sociedades.',
-                'tags' => 'corporate corporativo empresa 1120 negocio',
+                'desc' => __('s_corporate_desc'),
+                'tags' => __('s_corporate_tags'),
                 'url' => '/services/corporate-tax',
             ],
             [
-                'title' => 'Contabilidad Mensual',
+                'title' => __('s_bookkeeping_title'),
                 'image' => asset('img/accounting.webp'),
-                'desc' => 'Llevamos tus libros al día con reportes financieros precisos.',
-                'tags' => 'bookkeeping contabilidad libros reportes',
+                'desc' => __('s_bookkeeping_desc'),
+                'tags' => __('s_bookkeeping_tags'),
                 'url' => '/services/bookkeeping',
             ],
             [
-                'title' => 'Nómina y cumplimientos',
+                'title' => __('s_payroll_title'),
                 'image' => asset('img/payroll.webp'),
-                'desc' => 'Gestión completa de sueldos y cumplimiento fiscal laboral.',
-                'tags' => 'nomina payroll empleados cheques',
+                'desc' => __('s_payroll_desc'),
+                'tags' => __('s_payroll_tags'),
                 'url' => '/services/payroll',
             ],
             [
-                'title' => 'Trámite de ITIN',
+                'title' => __('s_itin_title'),
                 'image' => asset('img/itin.webp'),
-                'desc' => 'Como agentes certificadores (CAA), tramitamos tu ITIN sin enviar el pasaporte.',
-                'tags' => 'itin irs pasaporte identificacion',
+                'desc' => __('s_itin_desc'),
+                'tags' => __('s_itin_tags'),
                 'url' => '/services/itin',
             ],
             [
-                'title' => 'Creación de Empresas',
+                'title' => __('s_formation_title'),
                 'image' => asset('img/startup.webp'),
-                'desc' => 'Asesoría legal y registro de tu LLC o Corporación.',
-                'tags' => 'llc empresa registro negocio nuevo',
+                'desc' => __('s_formation_desc'),
+                'tags' => __('s_formation_tags'),
                 'url' => '/services/business-formation',
             ],
             [
-                'title' => 'Representación ante el IRS',
+                'title' => __('s_irs_title'),
                 'image' => asset('img/irs-rep.webp'),
-                'desc' => 'Resolución de cartas, auditorías y deudas tributarias.',
-                'tags' => 'auditoria cartas irs deuda',
+                'desc' => __('s_irs_desc'),
+                'tags' => __('s_irs_tags'),
                 'url' => '/services/irs-representation',
             ],
             [
-                'title' => 'Notaría en Georgia',
+                'title' => __('s_notary_title'),
                 'image' => asset('img/notary.webp'),
-                'desc' => 'Servicios de notarización de documentos oficiales en Georgia.',
-                'tags' => 'notaria documentos legal',
+                'desc' => __('s_notary_desc'),
+                'tags' => __('s_notary_tags'),
                 'url' => '/services/notary',
             ],
             [
-                'title' => 'Planificación Financiera',
+                'title' => __('s_planning_title'),
                 'image' => asset('img/planning.webp'),
-                'desc' => 'Estrategias para optimizar tu crecimiento y reducir impuestos.',
-                'tags' => 'finanzas ahorro planificacion futuro',
+                'desc' => __('s_planning_desc'),
+                'tags' => __('s_planning_tags'),
                 'url' => '/services/financial-planning',
             ],
             [
-                'title' => 'Auditorías y Revisiones',
+                'title' => __('s_audit_title'),
                 'image' => asset('img/audit.webp'),
-                'desc' => 'Soporte completo y preparación de documentos ante auditorías del IRS o estatales.',
-                'tags' => 'auditoria audit revision fiscal irs inspeccion',
+                'desc' => __('s_audit_desc'),
+                'tags' => __('s_audit_tags'),
                 'url' => '/services/audits',
             ],
             [
-                'title' => 'Impuesto a Ventas y Licencias',
+                'title' => __('s_sales_title'),
                 'image' => asset('img/sales.webp'),
-                'desc' => 'Gestión de Sales Tax mensual/trimestral y tramitación de licencias comerciales.',
-                'tags' => 'sales tax ventas licencias permisos comercial',
+                'desc' => __('s_sales_desc'),
+                'tags' => __('s_sales_tags'),
                 'url' => '/services/sales-tax',
             ],
         ];
@@ -140,11 +141,11 @@
 
             <div class="anim-header search-header text-center max-w-3xl mx-auto mb-16 opacity-0">
                 <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">
-                    Nuestros Servicios
+                    {{ __('our_services_label') }}
                 </span>
                 <h2 class="text-3xl md:text-5xl font-extrabold text-secondary mb-8">
-                    Encuentra la solución exacta <br />
-                    <span class="text-primary">para tus necesidades</span>
+                    {{ __('find_solution_title') }} <br />
+                    <span class="text-primary">{{ __('find_solution_subtitle') }}</span>
                 </h2>
 
                 <div class="relative max-w-xl mx-auto group">
@@ -155,8 +156,7 @@
                                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                         </svg>
                     </div>
-                    <input x-model="search" type="text"
-                        placeholder="Buscar servicio (ej: Nómina, ITIN, Impuestos)..."
+                    <input x-model="search" type="text" placeholder="{{ __('search_placeholder') }}"
                         class="block w-full pl-14 pr-4 py-4 bg-white border-2 border-gray-100 rounded-full text-gray-900 placeholder-gray-400 focus:outline-hidden focus:border-primary focus:ring-4 focus:ring-orange-100/50 shadow-lg transition-all duration-300" />
 
                     <button x-show="search.length > 0" @click="search = ''"
@@ -178,9 +178,13 @@
             <div id="services-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[400px]">
 
                 <template x-for="service in filteredServices" :key="service.title">
+                    {{--
+       CORRECCIÓN: Eliminé "opacity-0" de la lista de clases abajo.
+       GSAP se encargará de ocultarlos y mostrarlos en la carga inicial gracias al fromTo.
+    --}}
                     <article
-                        class="service-card-item group bg-white rounded-2xl overflow-hidden shadow-xs border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col opacity-0"
-                        {{-- Animaciones de filtrado nativas de Alpine --}} x-transition:enter="transition ease-out duration-300"
+                        class="service-card-item group bg-white rounded-2xl overflow-hidden shadow-xs border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col"
+                        x-transition:enter="transition ease-out duration-300"
                         x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100"
                         x-transition:leave="transition ease-in duration-300"
                         x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90">
@@ -197,7 +201,6 @@
                             <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors"
                                 x-text="service.title"></h3>
                             <p class="text-gray-600 text-sm leading-relaxed mb-4 flex-1" x-text="service.desc"></p>
-
                         </div>
                     </article>
                 </template>
@@ -214,22 +217,23 @@
                         </svg>
                     </div>
                     <h3 class="text-lg font-medium text-gray-900">
-                        No encontramos servicios para esa búsqueda
+                        {{ __('no_results_title') }}
                     </h3>
                     <button @click="search = ''" class="mt-4 text-primary font-bold hover:underline">
-                        Ver todos los servicios
+                        {{ __('view_all_btn') }}
                     </button>
                 </div>
             </div>
 
             <div class="anim-cta services-cta text-center mt-16 opacity-0">
-                <a href="/contact"
+                @php $prefix = App::getLocale() === 'en' ? '/en' : ''; @endphp
+                <a href="{{ $prefix }}/contact"
                     class="inline-flex items-center px-8 py-3 bg-primary hover:bg-orange-600 text-white font-bold rounded-full shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl"
                     {{-- Micro-interacción GSAP al pasar el mouse sobre el botón --}} x-data @mouseenter="gsap.to($el, { scale: 1.05, duration: 0.2 })"
                     @mouseleave="gsap.to($el, { scale: 1, duration: 0.2 })"
                     @mousedown="gsap.to($el, { scale: 0.95, duration: 0.1 })"
                     @mouseup="gsap.to($el, { scale: 1.05, duration: 0.1 })">
-                    Agenda tu Consulta Ahora
+                    {{ __('schedule_btn') }}
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

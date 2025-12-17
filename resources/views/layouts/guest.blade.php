@@ -22,6 +22,9 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollToPlugin.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/TextPlugin.min.js"></script>
 
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+
+
     <!-- Styles -->
     @livewireStyles
 </head>
@@ -35,6 +38,12 @@
     <x-footer />
 
     @livewireScripts
+    <script>
+
+        function onSubmit(token) {
+            document.getElementById("demo-form").submit();
+        }
+    </script>
 </body>
 
 </html>

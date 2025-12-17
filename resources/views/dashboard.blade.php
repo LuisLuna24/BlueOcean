@@ -11,10 +11,10 @@
             <div class="mb-8 flex items-center justify-between">
                 <div>
                     <h2 class="text-2xl font-bold text-gray-800 dark:text-white">
-                        Panel de Control
+                        {{ __('dashboard_panel_title') }}
                     </h2>
                     <p class="text-sm text-gray-500 dark:text-gray-400">
-                        Resumen de actividad y validaciones pendientes.
+                        {{ __('dashboard_panel_desc') }}
                     </p>
                 </div>
             </div>

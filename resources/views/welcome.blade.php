@@ -1,24 +1,21 @@
 <x-guest-layout>
     @php
-        // DEFINICIÓN DE DATOS (Equivalente al frontmatter de Astro)
+        // DEFINICIÓN DE DATOS TRADUCIDOS
         $services = [
             [
                 'icon' => '💰',
-                'title' => 'Preparación de Impuestos Individuales (1040)',
-                'desc' =>
-                    'Planificación estratégica para individuos y familias, maximizando deducciones y asegurando el cumplimiento de las declaraciones de impuestos (IRS).',
+                'title' => __('service_1_title'),
+                'desc' => __('service_1_desc'),
             ],
             [
                 'icon' => '📈',
-                'title' => 'Contabilidad Mensual y Reportes',
-                'desc' =>
-                    'Servicios completos de contabilidad, nómina y gestión financiera mensual para pequeñas y medianas empresas (PyMEs) que buscan un crecimiento organizado.',
+                'title' => __('service_2_title'),
+                'desc' => __('service_2_desc'),
             ],
             [
                 'icon' => '⚖️',
-                'title' => 'ITIN (CAA — Agente Certificador del IRS)',
-                'desc' =>
-                    'Asistencia profesional y certificación como Agente Aceptante Certificador para solicitudes ITIN (Formulario W-7), asegurando el cumplimiento fiscal para residentes y no residentes.',
+                'title' => __('service_3_title'),
+                'desc' => __('service_3_desc'),
             ],
         ];
     @endphp
@@ -46,22 +43,26 @@
 
                 <h1
                     class="hero-title invisible translate-y-8 text-white text-4xl md:text-6xl font-extrabold mb-6 leading-tight drop-shadow-lg">
-                    Accounting & Tax Services
+                    {{ __('accounting_tax_services') }}
                 </h1>
 
                 <p
                     class="hero-text invisible translate-y-4 text-white text-xl md:text-2xl font-semibold mb-4 drop-shadow-md">
-                    Firma de contabilidad y asesoría tributaria.
+                    {{ __('hero_subtitle') }}
                 </p>
 
                 <p
                     class="hero-text invisible translate-y-4 text-gray-300 text-lg md:text-xl italic font-light tracking-wide mb-10 max-w-2xl mx-auto">
-                    “TU ÉXITO ES PARTE DE NUESTRA MOTIVACIÓN”
+                    {{ __('hero_quote') }}
                 </p>
 
                 <div class="hero-btn-group invisible translate-y-4 flex flex-wrap justify-center gap-4">
-                    <x-a-button href="/services">Servicios</x-a-button>
-                    <x-a-button href="/contact" variant="secondary">Contacto</x-a-button>
+                    {{-- Verifica si necesitas prefijo de idioma para los links aquí también --}}
+                    @php
+                       $prefix = App::getLocale() === 'en' ? '/en' : '';
+                    @endphp
+                    <x-a-button href="{{ $prefix }}/services">{{ __('Services') }}</x-a-button>
+                    <x-a-button href="{{ $prefix }}/contact" variant="secondary">{{ __('Contact') }}</x-a-button>
                 </div>
             </div>
         </div>
@@ -82,7 +83,7 @@
         opacity: 1,
         x: 0,
         duration: 1,
-        ease: 'power3.out'
+        ease: 'power1.out'
     });
 
     // Animación Tarjetas (desde derecha, stagger)
@@ -92,7 +93,7 @@
         x: 0,
         duration: 1,
         stagger: 0.2,
-        ease: 'power3.out'
+        ease: 'power1.out'
     });">
         <div
             class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50 pointer-events-none">
@@ -104,10 +105,10 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
             <div class="essence-header text-center max-w-3xl mx-auto mb-16 opacity-0 translate-y-8">
                 <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">
-                    Nuestra Esencia
+                    {{ __('Our Essence') }}
                 </span>
                 <h2 class="text-3xl md:text-4xl font-bold text-secondary">
-                    Guiando tu camino al éxito financiero
+                    {{ __('guiding_success') }}
                 </h2>
             </div>
 
@@ -141,12 +142,10 @@
                             </svg>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">
-                            Nuestra Misión
+                            {{ __('Our Mission') }}
                         </h3>
                         <p class="text-gray-600 text-sm md:text-base leading-relaxed">
-                            "Ayudar a las personas y pequeños negocios a llevar una correcta planificación económica
-                            y tributaria para evitar problemas, ofreciendo soluciones de calidad y creando
-                            estrategias para el bienestar y riquezas de la familia de habla hispana."
+                            "{{ __('mission_desc') }}"
                         </p>
                     </div>
 
@@ -168,12 +167,10 @@
                             </svg>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-secondary transition-colors">
-                            Nuestra Visión
+                            {{ __('Our Vision') }}
                         </h3>
                         <p class="text-gray-600 text-sm md:text-base leading-relaxed">
-                            "Nuestra visión de liderar el camino de asesorías virtuales en contabilidad y
-                            preparación de impuestos personales y corporativos con calidad y confianza es clara.
-                            Estamos tomando medidas, estamos invirtiendo en tecnología y lo estamos logrando."
+                            "{{ __('vision_desc') }}"
                         </p>
                     </div>
                 </div>
@@ -209,10 +206,10 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="services-header text-center max-w-4xl mx-auto mb-16 opacity-0 translate-y-8">
                 <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">
-                    Nuestros Servicios Clave
+                    {{ __('key_services_title') }}
                 </span>
                 <h2 class="text-3xl md:text-5xl font-extrabold text-secondary leading-tight">
-                    Soluciones a la medida de tu negocio y familia
+                    {{ __('key_services_subtitle') }}
                 </h2>
             </div>
 
@@ -237,8 +234,10 @@
             </div>
 
             <div class="services-cta text-center mt-16 opacity-0 translate-y-8">
-                <x-a-button href="/services">
-                    Ver Todos los Servicios
+                {{-- Prefijo de idioma para este botón también --}}
+                @php $prefix = App::getLocale() === 'en' ? '/en' : ''; @endphp
+                <x-a-button href="{{ $prefix }}/services">
+                    {{ __('see_all_services') }}
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" class="ml-2 w-5 h-5">
@@ -247,6 +246,57 @@
                     </svg>
                 </x-a-button>
             </div>
+        </div>
+    </section>
+
+    <section class="bg-slate-50 py-10 md:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden" x-data x-init="// Registramos el plugin (asegúrate de haberlo importado en tu layout)
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Creamos una línea de tiempo que se activa al hacer scroll
+    let tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: $el, // El disparador es esta misma sección
+            start: 'top 85%', // Comienza cuando el top de la sección llega al 85% de la pantalla
+            toggleActions: 'play none none reverse' // Juega al entrar, revierte al salir hacia arriba
+        }
+    });
+
+    // 1. Animar Título y Subtítulo
+    tl.from('.review-header', {
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
+            ease: 'power3.out'
+        })
+        // 2. Animar el contenedor de Livewire
+        .from('.review-content', {
+            y: 30,
+            opacity: 0,
+            duration: 0.8,
+            ease: 'power3.out'
+        }, '-=0.6') // Se solapa un poco con la anterior
+        // 3. Animar el botón (aparece al final)
+        .from('.review-btn', {
+            scale: 0.8,
+            opacity: 0,
+            duration: 0.5,
+            ease: 'back.out(1.7)'
+        }, '-=0.4');">
+        <div class="max-w-7xl mx-auto space-y-12">
+
+
+            <div class="review-content relative z-10">
+                <livewire:review-list />
+            </div>
+
+            <div class="flex justify-center review-btn">
+                {{-- Prefijo de idioma para botón reseñas --}}
+                @php $prefix = App::getLocale() === 'en' ? '/en' : ''; @endphp
+                <x-a-button href="{{ $prefix }}/reviews" variant="primary" class="max-md:w-full justify-center">
+                    {{ __('see_all_reviews') }}
+                </x-a-button>
+            </div>
+
         </div>
     </section>
 </x-guest-layout>

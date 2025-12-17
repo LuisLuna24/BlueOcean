@@ -39,7 +39,7 @@
         'services' => $currentLang === 'en' ? 'Services' : 'Servicios',
         'team' => $currentLang === 'en' ? 'Team' : 'Equipo',
         'reviews' => $currentLang === 'en' ? 'Reviews' : 'Reseñas',
-        'policies' => $currentLang === 'en' ? 'Policies' : 'Políticas',
+        'policy' => $currentLang === 'en' ? 'policy' : 'Políticas',
         'contact' => $currentLang === 'en' ? 'Contact' : 'Contacto',
     ];
 
@@ -71,7 +71,7 @@
                     {{ $text['description'] }}
                 </p>
                 <div
-                    class="inline-block px-5 py-3 rounded-xl text-sm font-semibold transition-transform hover:-translate-y-1 shadow-lg shadow-blue-900/10 bg-secondary ">
+                    class="inline-block px-5 py-3 rounded-xl text-sm font-semibold transition-transform hover:-translate-y-1 shadow-lg shadow-blue-900/10 bg-secondary text-white">
                     {{ $text['cta_text'] }}
                 </div>
             </div>
@@ -152,9 +152,9 @@
                 &copy; {{ $currentYear }} Blue Ocean. {{ $text['rights'] }}
             </p>
             <div class="flex gap-6 mt-4 md:mt-0">
-                <a href="{{ $currentLang === 'en' ? '/en/policies' : '/policies' }}"
+                <a href="{{ $currentLang === 'en' ? '/en/policy' : '/policy' }}"
                     class="hover:text-primary transition-colors">
-                    {{ $t_nav['policies'] }}
+                    {{ $t_nav['policy'] }}
                 </a>
             </div>
         </div>

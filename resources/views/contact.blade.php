@@ -1,14 +1,13 @@
 <x-guest-layout>
     @php
         $contactData = [
-            'title' => 'Estamos listos para ayudarte',
-            'subtitle' => 'Elige tu método de contacto preferido o visita nuestra oficina.',
-            'location_title' => 'Nuestra Ubicación',
-            'location_address' =>
-                'Dentro de CUBEWORK, 1600 Indian Brook Way Ste 100 Office R01, Norcross, GA 30093, Estados Unidos',
+            'title' => __('contact_hero_title'),
+            'subtitle' => __('contact_hero_subtitle'),
+            'location_title' => __('location_title'),
+            'location_address' => __('location_address'),
             'contact_methods' => [
                 [
-                    'name' => 'WhatsApp',
+                    'name' => 'WhatsApp', // Nombres propios no suelen traducirse
                     'value' => '+1 (786) 325-3125',
                     'link' => 'https://wa.me/7863253125',
                     'icon' =>
@@ -16,7 +15,7 @@
                     'colorClass' => 'text-green-600 bg-green-50 hover:bg-green-100',
                 ],
                 [
-                    'name' => 'Correo Electrónico',
+                    'name' => __('method_email'),
                     'value' => 'info@blueoceanaccountax.com',
                     'link' => 'mailto:info@blueoceanaccountax.com',
                     'icon' =>
@@ -40,7 +39,7 @@
                     'colorClass' => 'text-pink-600 bg-pink-50 hover:bg-pink-100',
                 ],
                 [
-                    'name' => 'eFax (Fax Electrónico)',
+                    'name' => __('method_efax'),
                     'value' => '+1 (866) 214-7959',
                     'link' => 'tel:+18662147959',
                     'icon' =>
@@ -89,7 +88,7 @@
 
             <div class="text-center max-w-3xl mx-auto mb-16 contact-header opacity-0 translate-y-8">
                 <h2 class="text-sm font-bold tracking-widest text-primary uppercase mb-3">
-                    Contáctanos
+                    {{ __('contact_label') }}
                 </h2>
                 <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
                     {{ $contactData['title'] }}
@@ -123,8 +122,8 @@
 
                             <div
                                 class="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-primary">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M9 5l7 7-7 7" />
                                 </svg>
@@ -142,9 +141,8 @@
                                 {{ $contactData['location_title'] }}
                             </h3>
                             <div class="flex items-start text-gray-600">
-                                <svg xmlns="http://www.w3.org/2000/svg"
-                                    class="h-6 w-6 text-primary mr-2 mt-1 shrink-0" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary mr-2 mt-1 shrink-0"
+                                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
                                     </path>
@@ -157,7 +155,8 @@
                             </div>
                         </div>
 
-                        <a href="https://www.google.com/maps/search/?api=1&query=${{ urlencode($contactData['location_address']) }}"
+                        {{-- URL de Google Maps estándar --}}
+                        <a href="https://maps.google.com/?q={{ urlencode($contactData['location_address']) }}"
                             target="_blank" rel="noopener noreferrer"
                             class="relative flex-1 min-h-[300px] w-full group overflow-hidden bg-gray-200 block">
                             <img src="{{ asset('img/mapa.webp') }}" alt="Mapa de ubicación"
@@ -173,7 +172,7 @@
                                             d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0121 18.382V7.618a1 1 0 00-.553-.894L15 7m0 13V7">
                                         </path>
                                     </svg>
-                                    Ver en Google Maps
+                                    {{ __('view_google_maps') }}
                                 </span>
                             </div>
                         </a>

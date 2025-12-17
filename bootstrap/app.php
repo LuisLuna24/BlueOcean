@@ -2,6 +2,7 @@
 
 use App\Http\Middleware\EnsureUserHasRol;
 use App\Http\Middleware\hasVerifiedEmail;
+use App\Http\Middleware\SetLanguage; // <--- 1. Importamos tu nuevo middleware
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -26,10 +27,10 @@ return Application::configure(basePath: dirname(__DIR__))
         },
     )
     ->withMiddleware(function (Middleware $middleware) {
-
         $middleware->alias([
             'role' => EnsureUserHasRol::class,
             'email' => hasVerifiedEmail::class,
+            'set.lang' => SetLanguage::class, // <--- 2. Agregamos el alias aquí
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

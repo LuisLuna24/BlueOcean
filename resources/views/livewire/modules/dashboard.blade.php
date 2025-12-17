@@ -1,5 +1,10 @@
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+    @php
+        // Detectamos el prefijo actual para mantener el idioma en los enlaces
+        $prefix = App::getLocale() === 'en' ? 'admin.en.' : 'admin.';
+    @endphp
 
+    {{-- TARJETA 1: PENDIENTES --}}
     <div
         class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm ring-1 ring-gray-900/5 transition-all hover:shadow-md dark:ring-white/10">
         <div class="flex items-center gap-4 mb-4">
@@ -11,14 +16,16 @@
                 </svg>
             </div>
             <div>
-                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Por Revisar</p>
+                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">
+                    {{ __('stats_pending_label') }}
+                </p>
                 <h3 class="text-2xl font-bold text-gray-900 dark:text-white">{{ $pendingCount }}</h3>
             </div>
         </div>
 
-        <a href="{{ route('admin.reviews.index', ['status' => 0]) }}"
+        <a href="{{ route($prefix . 'reviews.index', ['status' => 0]) }}"
             class="w-full flex items-center justify-center gap-2 rounded-lg bg-orange-50 px-4 py-2 text-sm font-semibold text-orange-700 transition-colors hover:bg-orange-100 dark:bg-orange-900/30 dark:text-orange-300 dark:hover:bg-orange-900/50">
-            <span>Ver pendientes</span>
+            <span>{{ __('stats_pending_action') }}</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                 stroke="currentColor" class="h-3.5 w-3.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
@@ -26,6 +33,7 @@
         </a>
     </div>
 
+    {{-- TARJETA 2: APROBADAS --}}
     <div
         class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm ring-1 ring-gray-900/5 transition-all hover:shadow-md dark:ring-white/10">
         <div class="flex items-center gap-4 mb-4">
@@ -37,14 +45,16 @@
                 </svg>
             </div>
             <div>
-                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Aprobadas</p>
+                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">
+                    {{ __('stats_approved_label') }}
+                </p>
                 <h3 class="text-2xl font-bold text-gray-900 dark:text-white">{{ $approvedCount }}</h3>
             </div>
         </div>
 
-        <a href="{{ route('admin.reviews.index', ['status' => 1]) }}"
+        <a href="{{ route($prefix . 'reviews.index', ['status' => 1]) }}"
             class="w-full flex items-center justify-center gap-2 rounded-lg bg-emerald-50 px-4 py-2 text-sm font-semibold text-emerald-700 transition-colors hover:bg-emerald-100 dark:bg-emerald-900/30 dark:text-emerald-300 dark:hover:bg-emerald-900/50">
-            <span>Ver aprobadas</span>
+            <span>{{ __('stats_approved_action') }}</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                 stroke="currentColor" class="h-3.5 w-3.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
@@ -52,6 +62,7 @@
         </a>
     </div>
 
+    {{-- TARJETA 3: RECHAZADAS --}}
     <div
         class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-sm ring-1 ring-gray-900/5 transition-all hover:shadow-md dark:ring-white/10">
         <div class="flex items-center gap-4 mb-4">
@@ -63,14 +74,16 @@
                 </svg>
             </div>
             <div>
-                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Rechazadas</p>
+                <p class="text-sm font-medium text-gray-500 dark:text-gray-400">
+                    {{ __('stats_rejected_label') }}
+                </p>
                 <h3 class="text-2xl font-bold text-gray-900 dark:text-white">{{ $rejectedCount }}</h3>
             </div>
         </div>
 
-        <a href="{{ route('admin.reviews.index', ['status' => 2]) }}"
+        <a href="{{ route($prefix . 'reviews.index', ['status' => 2]) }}"
             class="w-full flex items-center justify-center gap-2 rounded-lg bg-rose-50 px-4 py-2 text-sm font-semibold text-rose-700 transition-colors hover:bg-rose-100 dark:bg-rose-900/30 dark:text-rose-300 dark:hover:bg-rose-900/50">
-            <span>Ver rechazadas</span>
+            <span>{{ __('stats_rejected_action') }}</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                 stroke="currentColor" class="h-3.5 w-3.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
