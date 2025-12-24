@@ -156,7 +156,7 @@
                         </div>
 
                         {{-- URL de Google Maps estándar --}}
-                        <a href="https://maps.google.com/?q={{ urlencode($contactData['location_address']) }}"
+                        <a href="https://maps.app.goo.gl/RtbQDbMfbfJqkH8R8"
                             target="_blank" rel="noopener noreferrer"
                             class="relative flex-1 min-h-[300px] w-full group overflow-hidden bg-gray-200 block">
                             <img src="{{ asset('img/mapa.webp') }}" alt="Mapa de ubicación"
