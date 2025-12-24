@@ -7,7 +7,7 @@
         duration: 1.2,
         ease: 'power3.out'
     });
-
+    
     // 2. Textos (Entran desde abajo en cascada)
     gsap.to('.about-stagger', {
         scrollTrigger: { trigger: '.about-content', start: 'top 75%' },
@@ -17,7 +17,7 @@
         stagger: 0.15,
         ease: 'power2.out'
     });
-
+    
     // 3. Iconos/Stats (Entran con rebote al final)
     gsap.to('.stat-item', {
         scrollTrigger: { trigger: '.stat-item', start: 'top 85%' },
@@ -44,7 +44,7 @@
                     </div>
 
                     <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl aspect-4/5 bg-gray-200 group">
-                        <img src="{{ asset('img/yamily-profile.webp') }}" alt="Yamily Zambrano - Asesora Fiscal"
+                        <img src="{{ asset('img/yamily-profile.webp') }}" alt="Yamily Lalo - Asesora Fiscal"
                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
 
                         <div
@@ -68,7 +68,7 @@
 
                     <h1
                         class="text-4xl lg:text-5xl font-extrabold text-gray-900 mb-2 about-stagger opacity-0 translate-y-4">
-                        Yamily Zambrano
+                        Yamily Lalo
                     </h1>
                     <h2 class="text-xl text-gray-500 font-medium mb-8 about-stagger opacity-0 translate-y-4">
                         {{ __('yamily_role') }}
@@ -93,7 +93,7 @@
                         </p>
                     </div>
 
-                    <div class="mt-10 grid grid-cols-2 md:grid-cols-3 gap-6 pt-8 border-t border-gray-100">
+                    <div class="mt-10 grid grid-cols-2 gap-6 pt-8 border-t border-gray-100">
 
                         <div class="stat-item opacity-0 translate-y-4">
                             <div class="text-secondary mb-2">
@@ -104,7 +104,7 @@
                                     </path>
                                 </svg>
                             </div>
-                            <h4 class="font-bold text-gray-900">MBA & CPA</h4>
+                            <h4 class="font-bold text-gray-900">MBA & PA</h4>
                             <p class="text-sm text-gray-500">{{ __('advanced_education') }}</p>
                         </div>
 
@@ -133,6 +133,22 @@
                             <p class="text-sm text-gray-500">{{ __('virtual_strategy') }}</p>
                         </div>
 
+                        <div class="stat-item opacity-0 translate-y-4">
+                            <div class="text-secondary mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round"
+                                    class="icon icon-tabler icons-tabler-outline icon-tabler-medal-2 h-8 w-8">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M9 3h6l3 7l-6 2l-6 -2z" />
+                                    <path d="M12 12l-3 -9" />
+                                    <path d="M15 11l-3 -8" />
+                                    <path d="M12 19.5l-3 1.5l.5 -3.5l-2 -2l3 -.5l1.5 -3l1.5 3l3 .5l-2 2l.5 3.5z" />
+                                </svg>
+                            </div>
+                            <h4 class="font-bold text-gray-900">{{ __('member_natp') }}</h4>
+                            <p class="text-sm text-gray-500">{{ __('natp_descript') }}</p>
+                        </div>
                     </div>
                 </div>
             </div>
