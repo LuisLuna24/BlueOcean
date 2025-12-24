@@ -1,8 +1,6 @@
 <x-guest-layout>
 
     @php
-        // Datos del Backend TRADUCIDOS
-        // Al usar __() aquí, el array que se pasa a Javascript ya irá en el idioma correcto.
         $servicesData = [
             [
                 'title' => __('s_personal_title'),
