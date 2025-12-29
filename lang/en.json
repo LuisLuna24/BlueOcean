@@ -591,5 +591,14 @@
     "link_gtc_refund": "GTC Refund",
     "tag_federal": "Federal",
     "tag_personal_mgmt": "Personal Management",
-    "tag_ga_state": "Georgia State"
+    "tag_ga_state": "Georgia State",
+    "modal_title_validate_all": "Approve comments",
+    "question_aproved_comments_all": "Would you like to approve all unvalidated comments?",
+    "validate": "Validate",
+    "message_alert": "Action completed successfully.",
+    "validate_all_button": "Validate All",
+    "delete_comments_button": "Remove rejected",
+    "title_delete_rejected": "Delete rejected records",
+    "description_delete_rejected": "This action cannot be undone. Please enter your password to confirm that you want to permanently delete all rejected items.",
+    "delete_reject_button_modal": "Delete Rejected"
 }

@@ -591,5 +591,14 @@
     "link_gtc_refund": "GTC Reembolso",
     "tag_federal": "Federal",
     "tag_personal_mgmt": "Gestión Personal",
-    "tag_ga_state": "Estado de Georgia"
+    "tag_ga_state": "Estado de Georgia",
+    "modal_title_validate_all": "Validar comentarios",
+    "question_aproved_comments_all": "¿Desea aprobar todos los comentarios que no tienen validación?",
+    "validate": "Validar",
+    "message_alert": "Acción completada con éxito.",
+    "validate_all_button": "Validar todos",
+    "delete_comments_button": "Eliminar rechazados",
+    "title_delete_rejected": "Eliminar registros rechazados",
+    "description_delete_rejected": "Esta acción no se puede deshacer. Por favor, introduce tu contraseña para confirmar que deseas eliminar permanentemente todos los elementos rechazados.",
+    "delete_reject_button_modal": "Eliminar Rechazados"
 }
