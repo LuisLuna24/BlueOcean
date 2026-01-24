@@ -25,9 +25,9 @@ class DatabaseSeeder extends Seeder
         ]);
 
         user::create([
-            'name' => 'Admin User',
-            'email' => 'admin@gmail.com',
-            'password' => 'Admin123#',
+            'name' => 'Yamily Lalo',
+            'email' => 'info@blueoceanaccountax.com',
+            'password' => 'Blueocean234*.',
             'type_user_id' => 1, // 1=admin, 2=user
             'is_active' => true,
         ]);

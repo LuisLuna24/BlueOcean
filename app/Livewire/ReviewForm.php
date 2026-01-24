@@ -2,9 +2,11 @@
 
 namespace App\Livewire;
 
+use App\Mail\CommentCreateMail;
 use App\Models\Review;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Component;
 
 class ReviewForm extends Component
@@ -59,6 +61,7 @@ class ReviewForm extends Component
 
             $this->successMessage = true;
             session()->flash('success', '¡Gracias por tu reseña!');
+            Mail::to('info@blueoceanaccountax.com')->send(new CommentCreateMail);
         } catch (\Exception $e) {
             DB::rollBack();
             $this->addError('general', 'Ocurrió un error. Inténtalo más tarde.');
